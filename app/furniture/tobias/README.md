@@ -16,8 +16,4 @@ What if restaurants and grocers lowered prices because food workers receive a su
 What if we all received a little-bit of cash every month thanks to the California Residents Basic Income Program?
 
 <!-- Fix: Community-Operated, Automated Basic Income -->
-TOBIAS, the TOpical Basic Income Administration System automates administering a basic income trust for industries, communities, regions, and organizations.
-
-TOBIAS combines democratic stewardship, financial automation, and trust fund management to collect, invest and distribute wealth as a community.
-
-Whether administering a basic income fund for a region, industry, organization, or community; TOBIAS simplifies record-keeping, drives investment, and streamlines participant payments.
+TOBIAS combines democratic stewardship, financial automation, and trust fund management to reduce financial stress of people around us. It simplifies record-keeping, facilitates decision-making, and streamlines payments when administering a basic income fund for a region, industry, organization, or community.
