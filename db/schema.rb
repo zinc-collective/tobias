@@ -326,8 +326,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_040004) do
   end
 
   create_table "tobias_payouts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.integer "payout_amount_cents", default: 0, null: false
-    t.string "payout_amount_currency", default: "USD", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "USD", null: false
     t.uuid "trust_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
