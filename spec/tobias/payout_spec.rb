@@ -29,5 +29,17 @@ RSpec.describe Tobias::Payout do
         end
       end
     end
+
+    context "when running twice" do
+      it "does not issue multiple payouts" do
+        payout = create(:tobias_payout, amount_cents: 100_00)
+
+        create_list(:tobias_beneficiary, 2, trust: payout.trust)
+
+        payout.issue
+
+        expect { payout.issue }.not_to(change(payout.payments, :count))
+      end
+    end
   end
 end
