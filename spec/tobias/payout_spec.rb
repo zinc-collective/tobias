@@ -15,5 +15,19 @@ RSpec.describe Tobias::Payout do
         expect(beneficiary.payments).to exist(amount_cents: 15_00)
       end
     end
+
+    context "when the Payout#amount does not divide evenly" do
+      it "rounds down so that it can" do
+        payout = create(:tobias_payout, amount_cents: 3_33)
+
+        beneficiaries = create_list(:tobias_beneficiary, 2, trust: payout.trust)
+
+        payout.issue
+
+        beneficiaries.each do |beneficiary|
+          expect(beneficiary.payments).to exist(amount_cents: 1_66)
+        end
+      end
+    end
   end
 end
