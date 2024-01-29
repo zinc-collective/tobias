@@ -2,7 +2,11 @@ require "rails_helper"
 require_relative "factories/payout_factory"
 require_relative "factories/beneficiary_factory"
 
-RSpec.describe Tobias::Payout do
+RSpec.describe Tobias::Payout, type: :model do
+  describe "#payments" do
+    it { is_expected.to have_many(:payments).inverse_of(:payout).dependent(:destroy) }
+  end
+
   describe "#issue" do
     it "issues a Payment to each Beneficiary for their share of the #amount" do
       payout = create(:tobias_payout, amount_cents: 150_00)
