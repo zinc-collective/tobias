@@ -9,6 +9,8 @@ class Tobias
     monetize :amount_cents
 
     def issue
+      return if payments.present?
+
       per_beneficiary_amount = (amount / beneficiaries.count)
       beneficiaries.each do |beneficiary|
         payments.create_with(amount: per_beneficiary_amount).find_or_create_by(beneficiary_id: beneficiary.id)
