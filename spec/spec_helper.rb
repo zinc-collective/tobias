@@ -1,6 +1,7 @@
 require "faker"
 require "pundit/rspec"
 require "simplecov"
+require "money-rails/test_helpers"
 
 SimpleCov.start do
   enable_coverage :branch
