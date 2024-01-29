@@ -4,7 +4,7 @@ class Tobias
 
     belongs_to :trust
     has_many :beneficiaries, through: :trust
-    has_many :payments
+    has_many :payments, inverse_of: :payout, dependent: :destroy
 
     monetize :amount_cents
 
