@@ -7,6 +7,14 @@ RSpec.describe Tobias::Payout, type: :model do
     it { is_expected.to have_many(:payments).inverse_of(:payout).dependent(:destroy) }
   end
 
+  describe "#beneficiaries" do
+    it { is_expected.to have_many(:beneficiaries).through(:trust) }
+  end
+
+  describe "#amount" do
+    it { is_expected.to monetize(:amount) }
+  end
+
   describe "#issue" do
     it "issues a Payment to each Beneficiary for their share of the #amount" do
       payout = create(:tobias_payout, amount_cents: 150_00)
