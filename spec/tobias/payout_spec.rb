@@ -29,5 +29,23 @@ RSpec.describe Tobias::Payout do
         end
       end
     end
+
+    context "when running twice" do
+      it "does not issue multiple payouts, even when beneficiaries are added" do
+        payout = create(:tobias_payout, amount_cents: 100_00)
+
+        create_list(:tobias_beneficiary, 2, trust: payout.trust)
+
+        payout.issue
+
+        create(:tobias_beneficiary, trust: payout.trust)
+
+        # ActiveRecord appears to be caching the `payout.beneficiaries` results
+        # Reload busts that cache.
+        payout.reload
+
+        expect { payout.issue }.not_to(change(payout.payments, :count))
+      end
+    end
   end
 end
