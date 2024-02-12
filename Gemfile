@@ -62,7 +62,7 @@ gem "ranked-model", "~> 0.4.9"
 gem "friendly_id", "~> 5.5.1"
 # Hashing / Encrypting data at rest
 gem "bcrypt", "~> 3.1.20"
-gem "lockbox", "1.3.2"
+gem "lockbox", "1.3.3"
 gem "rotp", "~> 6.3"
 gem "strong_migrations", "~> 1.7"
 # Soft Deletion
@@ -87,7 +87,7 @@ gem "tzinfo-data", "~> 1.2021", platforms: %i[mingw mswin x64_mingw jruby]
 # Performance Optimization
 #
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", "~> 1.17", require: false
+gem "bootsnap", "~> 1.18", require: false
 
 # Permissions and policies
 gem "pundit", "~> 2.3"
