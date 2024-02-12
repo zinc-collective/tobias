@@ -96,6 +96,7 @@ class Furniture < ApplicationRecord
       marketplace: ::Marketplace::Marketplace,
       livestream: ::Livestream,
       section_navigation: SectionNavigation::SectionNavigation,
+      tobias: Tobias,
       embedded_form: EmbeddedForm
     }
   end
