@@ -1,4 +1,5 @@
 /* Entry point for your PostCSS build */
+@import "trix";
 
 @import "./tailwind.scss";
 
@@ -7,3 +8,5 @@
 
 @import "./utilities.scss";
 @import "./components.scss";
+@import "actiontext.css";
+@import "./extensions/pagy.scss";

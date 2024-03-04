@@ -42,12 +42,12 @@ gem "redcarpet", "~> 3.6"
 gem "gretel", "~> 5.0"
 # Better UI components
 gem "lookbook", ">= 2.0.0.beta.4"
-gem "view_component", "~> 3.10"
+gem "view_component", "~> 3.11"
 # QR Code Generation!
 gem "rqrcode", "~> 2.2"
 
 # Pagination!
-gem "pagy", "~> 6.4"
+gem "pagy", "~> 7.0"
 
 # Database Layer
 #
@@ -129,7 +129,7 @@ group :development, :test do
 
   gem "rubocop-rails"
   gem "rubocop-rspec"
-  gem "standard", "~> 1.33"
+  gem "standard", "~> 1.34"
 end
 
 group :development do
@@ -137,7 +137,7 @@ group :development do
   gem "binding_of_caller"
   # Outputs i18n lookup key debug logs
   gem "i18n-debug"
-  gem "listen", "~> 3.8"
+  gem "listen", "~> 3.9"
   gem "rails-erd"
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem "web-console", "~> 4.2"
