@@ -1,6 +1,7 @@
 class CreateTobiasPayouts < ActiveRecord::Migration[7.1]
   def change
     create_table :tobias_trusts, id: :uuid do |t|
+      t.references :tobias, type: :uuid, foreign_key: {to_table: :furnitures}
       t.timestamps
     end
 

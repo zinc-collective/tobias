@@ -361,8 +361,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_22_004148) do
   end
 
   create_table "tobias_trusts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "tobias_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tobias_id"], name: "index_tobias_trusts_on_tobias_id"
   end
 
   create_table "utility_hookups", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -404,4 +406,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_22_004148) do
   add_foreign_key "tobias_payments", "tobias_beneficiaries", column: "beneficiary_id"
   add_foreign_key "tobias_payments", "tobias_payouts", column: "payout_id"
   add_foreign_key "tobias_payouts", "tobias_trusts", column: "trust_id"
+  add_foreign_key "tobias_trusts", "furnitures", column: "tobias_id"
 end
