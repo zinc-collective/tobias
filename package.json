@@ -11,7 +11,10 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "build:css": "postcss --config postcss.config.cjs ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css",
-    "autoformat": "prettier --write  './**/*.{scss,css,js}'"
+    "autoformat": "prettier --write  './**/*.{scss,css,js}'",
+    "webpack:analyze": "yarn webpack:build_json && yarn webpack:analyze_json",
+    "webpack:build_json": "webpack --profile --json > webpack-stats.json",
+    "webpack:analyze_json": "webpack-bundle-analyzer webpack-stats.json public/packs"
   },
   "repository": {
     "type": "git",
@@ -29,26 +32,27 @@
   },
   "homepage": "https://github.com/zinc-collective/convene#readme",
   "devDependencies": {
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "webpack-bundle-analyzer": "^4.10.1"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/stimulus-webpack-helpers": "^1.0.1",
-    "@hotwired/turbo-rails": "^8.0.3",
+    "@hotwired/turbo-rails": "^8.0.4",
     "@rails/actioncable": "^7.1.3",
     "@rails/actiontext": "^7.1.3",
     "@rails/activestorage": "^7.1.3",
-    "@sentry/browser": "^7.104.0",
+    "@sentry/browser": "^7.108.0",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "@webpack-cli/serve": "^2.0.5",
-    "autoprefixer": "^10.4.18",
+    "autoprefixer": "^10.4.19",
     "event-target-shim": "^6.0.2",
-    "postcss": "^8.4.35",
+    "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-import": "^16.0.1",
-    "postcss-preset-env": "^9.4.0",
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^9.5.1",
     "tailwindcss": "^3.4.1",
     "trix": "^2.0.10",
     "webpack": "^5.76.0",

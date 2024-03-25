@@ -64,7 +64,7 @@ gem "friendly_id", "~> 5.5.1"
 gem "bcrypt", "~> 3.1.20"
 gem "lockbox", "1.3.3"
 gem "rotp", "~> 6.3"
-gem "strong_migrations", "~> 1.7"
+gem "strong_migrations", "~> 1.8"
 # Soft Deletion
 gem "discard", "~> 1.2"
 
@@ -78,7 +78,7 @@ gem "pg", "~> 1.5"
 gem "image_processing"
 
 # Use S3 for file storage
-gem "aws-sdk-s3", "~> 1.143", require: false
+gem "aws-sdk-s3", "~> 1.146", require: false
 # Date/Time and Internationalization
 #
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -117,9 +117,9 @@ group :development, :test do
 
   # Our preferred testing library for Ruby and Rails projects
   gem "rails-controller-testing"
-  gem "rspec-rails", "~> 6.1.1"
+  gem "rspec-rails", "~> 6.1.2"
   gem "rswag-specs"
-  gem "shoulda-matchers", "~> 6.1"
+  gem "shoulda-matchers", "~> 6.2"
 
   gem "capybara"
   gem "selenium-webdriver"
@@ -129,7 +129,7 @@ group :development, :test do
 
   gem "rubocop-rails"
   gem "rubocop-rspec"
-  gem "standard", "~> 1.34"
+  gem "standard", "~> 1.35"
 end
 
 group :development do
