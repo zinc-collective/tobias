@@ -3,6 +3,5 @@ class Tobias
     def show?
       true
     end
-    alias_method :entry, :object
   end
 end
