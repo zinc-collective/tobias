@@ -5,12 +5,12 @@ class Tobias
     def show
       authorize trust
     end
-
   end
+
   class TrustPolicy < ApplicationPolicy
-      def show?
-        true
-      end
+    def show?
+      true
+    end
     alias_method :entry, :object
   end
 end
